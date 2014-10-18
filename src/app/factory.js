@@ -1,4 +1,9 @@
+/**
+ * Factory of tools instances
+ *
+ */
 Game.toolsFactory = (function() {
+
     // ---------
     //  helpers
     // ---------
@@ -17,6 +22,8 @@ Game.toolsFactory = (function() {
         }
         return res;
     };
+
+
 
     // --------------------
     //  Main functionality
@@ -51,9 +58,9 @@ Game.toolsFactory = (function() {
         if (!this.iLoose || !this.iWin) throw new Error(this.name + ': list of winners/loosers not specified!');
         if (typeof enemyName !== 'string') throw new Error(this.name + ': enemy name should be a String!');
 
-        if (this.name === enemyName) return 0;
-        if (this.iLoose.indexOf(enemyName) !== -1) return -1;
-        if (this.iWin.indexOf(enemyName) !== -1) return 1;
+        if (this.name === enemyName) return 0; // draw
+        if (this.iLoose.indexOf(enemyName) !== -1) return -1; // player loose
+        if (this.iWin.indexOf(enemyName) !== -1) return 1; // player wins
         else throw new Error(this.name + ': enemy name ['+ enemyName +'] is not listed!');
     };
 

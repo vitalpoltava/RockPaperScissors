@@ -211,7 +211,7 @@ Game.view = (function(){
         },
 
         /**
-         * We should sanitize inputs, derived from users
+         * We should sanitize inputs, derived from outer space
          *
          * @param raw
          * @returns {*}

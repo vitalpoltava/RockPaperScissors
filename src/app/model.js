@@ -3,6 +3,9 @@ Game.model = (function(){
 
         init: function() {
             var tools = [];
+
+            // here goes the main config of the game
+            // -------------------------------------
             var config = [
                 {
                     name: 'Rock',
