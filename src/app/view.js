@@ -11,7 +11,8 @@ Game.view = (function(){
         config: {
             selectWrapperId: 'select-wrapper',
             resultWrapperId: 'results-wrapper',
-            returnWrapperId: 'return-wrapper'
+            returnWrapperId: 'return-wrapper',
+            layoutClass: 'layout'
         },
 
         /**
@@ -31,10 +32,11 @@ Game.view = (function(){
          * @returns {Game.view}
          */
         populateProps: function() {
-            this.layouts = document.getElementsByClassName('layout');
-            this.selectWrapper = document.getElementById(this.config.selectWrapperId);
-            this.resultWrapper = document.getElementById(this.config.resultWrapperId);
-            this.returnWrapper = document.getElementById(this.config.returnWrapperId);
+            var config = this.config;
+            this.layouts = document.getElementsByClassName(config.layoutClass);
+            this.selectWrapper = document.getElementById(config.selectWrapperId);
+            this.resultWrapper = document.getElementById(config.resultWrapperId);
+            this.returnWrapper = document.getElementById(config.returnWrapperId);
             return this;
         },
 
