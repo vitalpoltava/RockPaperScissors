@@ -68,7 +68,7 @@ Game.view = (function(){
         attachEvents: function() {
             this.selectWrapper.addEventListener('click', function(event) {
                 var target = event.target ? event.target : event.srcElement;
-                Game.mediator.publish('toolSelected', this._sanitize(target.innerText || target.textContent));
+                Game.mediator.publish('toolSelected', this._sanitize(target.dataset.name));
             }.bind(this));
 
             this.resultWrapper.addEventListener('click', function() {
@@ -125,7 +125,7 @@ Game.view = (function(){
 
             forEach.call(nodes, function(el) {
                 if(+el.dataset.number === current) {
-                    el.style.display = 'block';
+                    el.style.display = 'table';
                 } else {
                     el.style.display = 'none';
                 }

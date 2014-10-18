@@ -3,8 +3,9 @@
  */
 
 Game.itemTemplate = [
-    '<div class="tools-item-wrapper">',
-        '<div>{{name}}</div>',
+    '<div class="tools-item-wrapper" data-name="{{name}}" title="Click to choose {{name}} and start!">',
+        '<div class="tools-item-icon" data-name="{{name}}"><img data-name="{{name}}" class="tools-item-image" src="images/{{name}}.png" /></div>',
+        '<div class="tools-item-name" data-name="{{name}}">{{name}}</div>',
     '</div>'
 ].join('');
 

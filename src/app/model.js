@@ -5,18 +5,18 @@ Game.model = (function(){
             var tools = [];
             var config = [
                 {
-                    name: 'Stone',
+                    name: 'Rock',
                     wins: ['Scissors'],
                     loose: ['Paper']
                 },
                 {
                     name: 'Scissors',
                     wins: ['Paper'],
-                    loose: ['Stone']
+                    loose: ['Rock']
                 },
                 {
                     name: 'Paper',
-                    wins: ['Stone'],
+                    wins: ['Rock'],
                     loose: ['Scissors']
                 }
             ];
