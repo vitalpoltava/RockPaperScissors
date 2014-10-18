@@ -10,15 +10,20 @@ Game.itemTemplate = [
 ].join('');
 
 Game.resultTemplate = [
-    '<div>',
-        '<div>Your choice: {{yourChoice}}</div>',
-        '<div>Machine: {{machineChoice}}</div>',
-    '</div>'
+     '<div class="choice-item">',
+        '<div class="result-header">YOU</div>',
+        '<div class="result-icon"><img class="tools-item-image" src="images/{{yourChoice}}.png" /></div>',
+        '<div class="result-name">{{yourChoice}}</div>',
+     '</div>',
+     '<div class="choice-item divider"></div>',
+     '<div class="choice-item">',
+        '<div class="result-header">COMPUTER</div>',
+        '<div class="result-icon"><img class="tools-item-image" src="images/{{machineChoice}}.png" /></div>',
+        '<div class="result-name">{{machineChoice}}</div>',
+     '</div>'
 ].join('');
 
 Game.returnTemplate = [
-    '<div>',
-        '<div>{{message}}</div>',
-        '<div>Click to play again!</div>',
-    '</div>'
+     '<div class="return-message">{{message}}</div>',
+     '<div class="return-alert"><div class="msg">again</div></div>'
 ].join('');
