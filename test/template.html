@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Jasmine Spec Runner</title>
+    <link rel="shortcut icon" type="image/png" href=".grunt/grunt-contrib-jasmine/jasmine_favicon.png">
+
+    <link rel="stylesheet" type="text/css" href=".grunt/grunt-contrib-jasmine/jasmine.css">
+
+
+</head>
+<body>
+
+<div class="main">
+    <div id="select-wrapper" class="layout" data-number="1"></div>
+    <div id="results-wrapper" class="layout" data-number="2" title="Click to go on!"></div>
+    <div id="return-wrapper" class="layout" data-number="3"></div>
+</div>
+
+<script>
+    // This is a global var :( , but we need it as a start point
+    var Game = Game || {};
+</script>
+
+<script src=".grunt/grunt-contrib-jasmine/es5-shim.js"></script>
+
+<script src=".grunt/grunt-contrib-jasmine/jasmine.js"></script>
+
+<script src=".grunt/grunt-contrib-jasmine/jasmine-html.js"></script>
+
+<script src=".grunt/grunt-contrib-jasmine/boot.js"></script>
+
+<script src="test/tests.js"></script>
+
+<script src=".grunt/grunt-contrib-jasmine/reporter.js"></script>
+
+
+</body>
+</html>

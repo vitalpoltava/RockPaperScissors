@@ -39,6 +39,23 @@ module.exports = function(grunt) {
                 ],
                 dest: 'public/js/main.js'
             }
+        },
+        jasmine: {
+            game: {
+                src: ["public/js/build.js"],
+                options: {
+                    host: 'http://localhost:8000/',
+                    specs: 'test/*.js',
+                    template: 'test/template.html'
+                }
+            }
+        },
+        connect: {
+            server: {
+                options: {
+                    port: 8000
+                }
+            }
         }
     });
 
@@ -46,9 +63,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-contrib-connect');
 
     // Tasks
     grunt.registerTask('default', ['less', 'concat', 'uglify']);
     grunt.registerTask('styles', ['less']);
+    grunt.registerTask('tests', ['connect:server', 'jasmine:game']);
 
 };
