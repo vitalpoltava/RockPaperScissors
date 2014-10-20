@@ -1,9 +1,4 @@
 /* Helpers */
-.border-radius (@radius: 5px) {
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-  border-radius: @radius;
-}
 
 .rotate (@deg: 7deg) {
   transform:rotate(@deg);
@@ -30,7 +25,11 @@
   white-space: normal;
 }
 
-/* Basic styles */
+/*
+    Main styles
+    -----------
+*/
+
 html, body, .main, .layout {
   position: relative;
   height: 100%;
@@ -140,7 +139,10 @@ html, body, .main, .layout {
 }
 
 
-/* update content layout for MOBILE screens */
+/*
+     update content layout for MOBILE devices
+     ----------------------------------------
+*/
 
 /* medium sized devices */
 @media (max-width: 992px) {
@@ -195,6 +197,7 @@ html, body, .main, .layout {
     }
   }
 
+  /* smaller images */
   .tools-item-image {
     width: 5em;
     height: 5em;
