@@ -42,7 +42,6 @@ module.exports = function(grunt) {
         },
         jasmine: {
             game: {
-                src: ["public/js/build.js"],
                 options: {
                     host: 'http://localhost:8000/',
                     specs: 'test/*.js',
