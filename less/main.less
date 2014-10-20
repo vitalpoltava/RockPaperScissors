@@ -169,6 +169,32 @@ html, body, .main, .layout {
     width: 100%;
   }
 
+  /* Layout 1: change to horizontal design */
+  #select-wrapper {
+    .tools-item-wrapper {
+      display: block;
+      border-collapse: collapse;
+      &:hover {
+        background-color: #add8e6;
+        .rotate();
+      }
+      &:active {
+        background-color: #00d0f4;
+      }
+      .tools-item-name {
+        vertical-align: middle;
+        display: inline-block;
+        width: auto;
+      }
+      .tools-item-icon {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left;
+        margin: 1em;
+      }
+    }
+  }
+
   .tools-item-image {
     width: 5em;
     height: 5em;
