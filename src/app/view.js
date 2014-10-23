@@ -5,6 +5,9 @@
  */
 
 Game.view = (function(){
+    var _subscribe = Game.mediator.subscribe;
+    var _publish = Game.mediator.publish;
+
     return {
 
         // here placed ids of main DOM wrappers
@@ -56,9 +59,9 @@ Game.view = (function(){
          * @returns {Game.view}
          */
         subscribeEvents: function() {
-            Game.mediator.subscribe('toolSelectionReady', this._changeLayout.bind(this, 2));
-            Game.mediator.subscribe('resultShown', this._changeLayout.bind(this, 3));
-            Game.mediator.subscribe('returnClicked', this._changeLayout.bind(this, 1));
+            _subscribe('toolSelectionReady', this._changeLayout.bind(this, 2));
+            _subscribe('resultShown', this._changeLayout.bind(this, 3));
+            _subscribe('returnClicked', this._changeLayout.bind(this, 1));
             return this;
         },
 
@@ -70,15 +73,15 @@ Game.view = (function(){
         attachEvents: function() {
             this.selectWrapper.addEventListener('click', function(event) {
                 var target = event.target ? event.target : event.srcElement;
-                Game.mediator.publish('toolSelected', this._sanitize(target.dataset.name));
+                _publish('toolSelected', this._sanitize(target.dataset.name));
             }.bind(this));
 
             this.resultWrapper.addEventListener('click', function() {
-                Game.mediator.publish('resultShown');
+                _publish('resultShown');
             }.bind(this));
 
             this.returnWrapper.addEventListener('click', function() {
-                Game.mediator.publish('returnClicked');
+                _publish('returnClicked');
             }.bind(this));
 
             return this;
